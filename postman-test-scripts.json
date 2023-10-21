@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "49f1c59d-c298-4175-9dbe-25bd50ec5af6",
+		"name": "contacts api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28835873",
+		"_collection_link": "https://lunar-meadow-158514.postman.co/workspace/My-Workspace~596d7abe-7d84-44e5-8c1e-e6e3d49cb8a3/collection/28835873-49f1c59d-c298-4175-9dbe-25bd50ec5af6?action=share&source=collection_link&creator=28835873"
+	},
+	"item": [
+		{
+			"name": "create contacts with csv body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "김철수, charles@clovf.com, 010-1234-5678, 2020-01-05\n박영희, matilda@clovf.com, 010-1234-5566, 2021-04-28\n홍길동, kildong.hong@clovf.com, 010-1234-4433, 2015-08-15",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create contacts with json body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"name\": \"이무기\", \"email\": \"weapon@clovf.com\", \"tel\": \"010-1111-2424\", \"joined\": \"2020-01-05\"\n  },\n  {\n    \"name\": \"판브이\", \"email\": \"panv@clovf.com\", \"tel\": \"010-3535-7979\", \"joined\": \"2013-07-01\"\n  },\n  {\n    \"name\": \"차호빵\", \"email\": \"hobread@clovf.com\", \"tel\": \"010-8531-7942\", \"joined\": \"2019-12-05\"\n  }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create contacts by json upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"contentType": "application/json",
+							"type": "file",
+							"src": "/Users/lunit_kevinchun/e_ws/contact-list/contacts.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create contacts by csv upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"contentType": "text/csv",
+							"type": "file",
+							"src": "/Users/lunit_kevinchun/e_ws/contact-list/contacts.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search with paging",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/employee?page=0&pageSize=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/employee/김철수1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"김철수1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

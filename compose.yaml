@@ -1,0 +1,28 @@
+services:
+  contactlist:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      - 'SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/clo'
+      - 'SPRING_DATASOURCE_USERNAME=test_user'
+      - 'SPRING_DATASOURCE_PASSWORD=test_password'
+    depends_on:
+      - postgres
+    networks:
+      - clo_network
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=clo'
+      - 'POSTGRES_PASSWORD=test_password'
+      - 'POSTGRES_USER=test_user'
+    ports:
+      - '5432:5432'
+    networks:
+      - clo_network
+networks:
+  clo_network:
+
