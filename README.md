@@ -37,7 +37,7 @@ docker-compose up -d
 
 # Swagger
 docker-compose로 application을 실행 후, `http://localhost:8080/swagger-ui.html` 로 접속하면 swagger-ui를 통해 api를 테스트할 수 있습니다.
-![swagger.png](..%2F..%2FDesktop%2Fswagger.png)
+![swagger.png](swagger.png)
 
 # Postman test
 rest api를 테스트하기 위해서 postman을 사용했고, 테스트 했던 스크립트를 프로젝트에 추가했습니다. 이 스크립트를 postman을 통해서 불러와서 다시 테스트를 진행할 수 있습니다.
